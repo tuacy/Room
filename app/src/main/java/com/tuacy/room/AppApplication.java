@@ -11,12 +11,12 @@ public class AppApplication extends Application {
 
 	private AppDatabase mAppDatabase;
 
-	//迁移数据库如果发生错误，将会重新创建数据库，而不是发生崩溃
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		mAppDatabase = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "android_room_dev.db").allowMainThreadQueries()
-						   						   .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
+		mAppDatabase = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "android_room_dev.db")
+						   .allowMainThreadQueries()
+						   .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
 						   .build();
 	}
 

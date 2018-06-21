@@ -29,7 +29,7 @@ public class MainActivity extends BaseActivity {
 				user.setPhone("18988195061");
 				user.setAddress("珠海");
 				user.setName("tuacy");
-//				user.setAge("28");
+				//				user.setAge("28");
 				List<Long> ids = mAppDatabase.userDao().insert(user);
 				if (ids != null) {
 					for (Long id : ids) {
